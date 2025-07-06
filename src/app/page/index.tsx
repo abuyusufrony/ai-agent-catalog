@@ -1,11 +1,10 @@
 import Head from 'next/head';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/app/store';
+
 
 
 export default function HomePage() {
-    const agents = useSelector((state: RootState) => state.agents.filteredAgents);
-    console.log(agents)
+
+
 
     return (
         <>
