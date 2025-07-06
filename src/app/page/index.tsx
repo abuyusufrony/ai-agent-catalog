@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
-import AgentCard from '@/components/AgentCard'; // assuming this exists
-import SearchBar from '@/components/SearchBar'; // optional
-import FilterPanel from '@/components/FilterPanel'; // optional
+
 
 export default function HomePage() {
     const agents = useSelector((state: RootState) => state.agents.filteredAgents);

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import AgentModal from "./page/AgentModal";
+import Image from "next/image";
 
 
 export default function Home() {
@@ -64,11 +65,16 @@ export default function Home() {
           >
             <Card className="shadow-md hover:shadow-lg transition-shadow rounded-lg">
               <CardContent className="p-4 flex flex-col">
-                <img
-                  src={agent.image}
-                  alt={agent.name}
-                  className="rounded h-40 w-full object-cover mb-3"
-                />
+                <div className="relative w-full h-48 mb-4">
+                  <Image
+                    src={agent.image}
+                    alt={`Image of ${agent.name}`}
+                    fill
+                    className="object-cover rounded"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    priority={true}
+                  />
+                </div>
                 <h2 className="text-lg font-semibold">{agent.name}</h2>
                 <p className="text-sm text-gray-500">{agent.type}</p>
                 <p className="text-sm mt-2 text-muted-foreground">{agent.description.slice(0, 45)}</p>

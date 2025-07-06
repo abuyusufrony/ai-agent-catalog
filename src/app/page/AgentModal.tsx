@@ -8,7 +8,7 @@ import {
     DialogDescription,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge"; // if you use shadcn badges
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface AgentModalProps {
     agent: Agent;
@@ -28,11 +28,16 @@ export default function AgentModal({ agent }: AgentModalProps) {
                         </DialogDescription>
                     </DialogHeader>
 
-                    <img
-                        src={agent.image}
-                        alt={agent.name}
-                        className="rounded w-full h-48 object-cover mb-4"
-                    />
+                    <div className="relative w-full h-48 mb-4">
+                        <Image
+                            src={agent.image}
+                            alt={`Image of ${agent.name}`}
+                            fill
+                            className="object-cover rounded"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                            priority={true}
+                        />
+                    </div>
 
                     <p className="text-sm text-gray-700 mb-4">{agent.description}</p>
 

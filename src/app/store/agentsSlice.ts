@@ -1,11 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
+import { RootState } from "./index";
 export type Agent = {
     id: string;
     name: string;
     type: string;
     description: string;
     image: string;
+    features?: string[]
+    tags?: string[]
+    link?: string;
 };
 
 const initialAgents: Agent[] = [
@@ -233,6 +236,7 @@ const initialState: AgentsState = {
     filterType: null,
     searchQuery: "",
     selectedAgent: null,
+
 };
 
 export const agentSlice = createSlice({
@@ -254,15 +258,19 @@ export const agentSlice = createSlice({
 
 export const { setFilterType, setSearchQuery, setSelectedAgent } = agentSlice.actions;
 
-export const selectFilteredAgents = (state: AgentState) => {
-    return state.agents.filter((agent) => {
+export const selectFilteredAgents = (state: RootState): Agent[] => {
+    const { agents, filterType, searchQuery } = state.agents;
+
+    return agents.filter((agent) => {
         const matchesSearch = agent.name
             .toLowerCase()
-            .includes(state.searchQuery.toLowerCase());
-        const matchesFilter =
-            !state.filterType || agent.type === state.filterType;
+            .includes(searchQuery.toLowerCase());
+
+        const matchesFilter = !filterType || agent.type === filterType;
+
         return matchesSearch && matchesFilter;
     });
 };
+
 
 export default agentSlice.reducer;
