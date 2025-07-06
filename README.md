@@ -29,6 +29,10 @@ Explore a dynamic catalog of AI-powered agents with filtering, search, and detai
 - [Vercel Hosting](https://vercel.com/)
 
 ---
+## 🔐 Authentication
+
+Authentication is implemented using [NextAuth.js](https://next-auth.js.org/) with Google OAuth.
+---
 
 ## 🚀 Getting Started
 
@@ -38,9 +42,7 @@ Explore a dynamic catalog of AI-powered agents with filtering, search, and detai
 git clone https://github.com/your-username/ai-agent-catalog.git
 cd ai-agent-catalog
 ---
-## 🔐 Authentication
 
-Authentication is implemented using [NextAuth.js](https://next-auth.js.org/) with Google OAuth.
 
 ### 📦 Setup
 
