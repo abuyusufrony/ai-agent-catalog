@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import AgentModal from "./page/AgentModal";
 import Image from "next/image";
+import AuthButtons from "@/app/components/AuthButtons";
 
 
 export default function Home() {
@@ -25,7 +26,17 @@ export default function Home() {
 
 
     <main className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6">🤖 AI Agent Catalog</h1>
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-3xl font-bold mb-6">🤖 AI Agent Catalog</h1>
+        </div>
+        <div>
+          <AuthButtons></AuthButtons>
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto px-4 py-12">
+
+      </div>
 
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -47,6 +58,7 @@ export default function Home() {
         <Button onClick={() => { dispatch(setSearchQuery("")); dispatch(setFilterType(null)); }}>
           Reset
         </Button>
+
       </div>
 
       {/* Agent Cards */}
