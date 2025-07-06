@@ -33,6 +33,11 @@ Explore a dynamic catalog of AI-powered agents with filtering, search, and detai
 
 Authentication is implemented using [NextAuth.js](https://next-auth.js.org/) with Google OAuth.
 ---
+## 🙌 Credits
+
+**Developed by [Abu Yusuf Rony](https://www.linkedin.com/in/abu-yusuf-rony-83859a165/)**  
+Design inspired by modern SaaS and AI platform aesthetics.
+---
 
 ## 🚀 Getting Started
 
@@ -49,7 +54,4 @@ cd ai-agent-catalog
 1. Create a Google OAuth app in [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
 2. Add these two authorized **redirect URIs**:
 
-## 🙌 Credits
 
-**Developed by [Abu Yusuf Rony](https://www.linkedin.com/in/abu-yusuf-rony-83859a165/)**  
-Design inspired by modern SaaS and AI platform aesthetics.
